@@ -51,23 +51,47 @@ export function RuhHali({ onAc, onEkle }: { onAc: (u: UrunKat) => void; onEkle: 
             transition={{ duration: azalt ? 0 : 0.16 }}
           >
             {o.urunler.map((u) => (
-              <li key={u.id} className="flex w-[188px] flex-none items-center gap-2.5 rounded-xl bg-yuzey p-2.5">
+              <li
+                key={u.id}
+                className="group relative flex w-[230px] flex-none items-center gap-2.5 rounded-2xl bg-yuzey p-2.5 shadow-xs transition-transform active:scale-[0.99]"
+              >
                 {u.foto ? (
-                  <Image src={u.foto} alt="" width={72} height={72} className="size-[72px] flex-none rounded-xl object-cover" />
+                  <Image
+                    src={u.foto}
+                    alt={u.ad}
+                    width={60}
+                    height={60}
+                    className="size-[60px] flex-none rounded-xl object-cover bg-zemin"
+                  />
                 ) : (
-                  <KategoriIkon ad={katBul(u.katId)?.ikon ?? ""} boyut={18} className="flex-none self-start text-soluk" />
+                  <div className="grid size-[60px] flex-none place-items-center rounded-xl bg-zemin text-soluk">
+                    <KategoriIkon ad={katBul(u.katId)?.ikon ?? ""} boyut={22} />
+                  </div>
                 )}
-                <button type="button" onClick={() => onAc(u)} aria-label={T.menu.ayrintiAria(u.ad)} className="min-h-11 min-w-0 flex-1 text-start">
-                  <span className="block text-sm leading-tight font-medium">{u.ad}</span>
-                  <span className="mt-0.5 block text-[13px] text-soluk tabular-nums">{tl(u.fiyat)}</span>
+                <button
+                  type="button"
+                  onClick={() => onAc(u)}
+                  aria-label={T.menu.ayrintiAria(u.ad)}
+                  className="min-w-0 flex-1 text-start"
+                >
+                  <span className="block truncate text-sm font-semibold leading-snug text-ink">
+                    {u.ad}
+                  </span>
+                  <span className="mt-1 block text-[13px] font-medium text-soluk tabular-nums">
+                    {tl(u.fiyat)}
+                  </span>
                 </button>
                 <button
                   type="button"
                   aria-label={T.menu.ekleAria(u.ad)}
-                  onClick={(e) => (u.surup ? onAc(u) : onEkle(u, e.currentTarget.getBoundingClientRect()))}
-                  className="grid size-11 flex-none place-items-center rounded-full bg-zemin"
+                  onClick={(e) =>
+                    u.surup
+                      ? onAc(u)
+                      : onEkle(u, e.currentTarget.getBoundingClientRect())
+                  }
+                  className="grid size-9 flex-none place-items-center rounded-full bg-ink text-beyaz shadow-xs transition-transform active:scale-90"
                 >
-                  <Plus size={18} strokeWidth={1.75} aria-hidden="true" />
+                  <Plus size={16} strokeWidth={2.2} aria-hidden="true" />
                 </button>
               </li>
             ))}

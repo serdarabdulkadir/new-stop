@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import type { Metadata, Viewport } from "next";
 import { Familjen_Grotesk } from "next/font/google";
-import "./globals.css";
+import "./globals-compiled.css";
 
 const familjen = Familjen_Grotesk({
   variable: "--font-familjen",

@@ -29,9 +29,9 @@ export function IsletmeBilgisi({
           <Image
             src="/img/logo.png"
             alt="New Stop"
-            width={60}
-            height={60}
-            className="size-[60px] flex-none rounded-full object-cover shadow-xs border border-cizgi"
+            width={64}
+            height={64}
+            className="size-[64px] flex-none object-contain drop-shadow-xs"
           />
           <p className="text-[14px] leading-relaxed text-soluk font-normal">
             Durağında in, bir kahve molası ver. Karadeniz Teknik Üniversitesi Fatih Kampüsü yanı ve Söğütlü sahilinde lezzetli kahveler, tatlılar ve keyifli bir durak için her zaman seninleyiz.
@@ -74,11 +74,16 @@ export function IsletmeBilgisi({
         {/* Sosyal Medya & Fotoğraflar */}
         <div className="mt-6 border-t border-cizgi pt-4">
           <div className="flex items-center justify-between">
-            <span className="text-base font-bold tracking-tight text-ink">
-              @newstopcafe
-            </span>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/newstopcaferestaurant/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-base font-bold tracking-tight text-ink hover:underline"
+            >
+              @newstopcaferestaurant
+            </a>
+            <a
+              href="https://www.instagram.com/newstopcaferestaurant/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 text-xs font-bold tracking-wider text-soluk uppercase hover:text-ink"
@@ -89,33 +94,48 @@ export function IsletmeBilgisi({
           </div>
 
           <div className="mt-3 grid grid-cols-3 gap-2">
-            <div className="relative aspect-square overflow-hidden rounded-2xl bg-yuzey border border-cizgi/40">
+            <a
+              href="https://www.instagram.com/newstopcaferestaurant/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative aspect-square overflow-hidden rounded-2xl bg-yuzey border border-cizgi/40"
+            >
               <Image
                 src="/img/latte.webp"
                 alt="New Stop Kahve"
                 fill
-                className="object-cover"
+                className="object-cover transition-transform duration-200 group-hover:scale-105"
                 sizes="(max-width: 480px) 30vw, 120px"
               />
-            </div>
-            <div className="relative aspect-square overflow-hidden rounded-2xl bg-yuzey border border-cizgi/40">
+            </a>
+            <a
+              href="https://www.instagram.com/newstopcaferestaurant/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative aspect-square overflow-hidden rounded-2xl bg-yuzey border border-cizgi/40"
+            >
               <Image
                 src="/img/blue.webp"
                 alt="New Stop İçecek"
                 fill
-                className="object-cover"
+                className="object-cover transition-transform duration-200 group-hover:scale-105"
                 sizes="(max-width: 480px) 30vw, 120px"
               />
-            </div>
-            <div className="relative aspect-square overflow-hidden rounded-2xl bg-yuzey border border-cizgi/40">
+            </a>
+            <a
+              href="https://www.instagram.com/newstopcaferestaurant/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative aspect-square overflow-hidden rounded-2xl bg-yuzey border border-cizgi/40"
+            >
               <Image
                 src="/img/trio.webp"
                 alt="New Stop Tatlı"
                 fill
-                className="object-cover"
+                className="object-cover transition-transform duration-200 group-hover:scale-105"
                 sizes="(max-width: 480px) 30vw, 120px"
               />
-            </div>
+            </a>
           </div>
         </div>
       </div>

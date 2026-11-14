@@ -6,14 +6,6 @@ const nextConfig: NextConfig = {
   images: { unoptimized: true },
   devIndicators: false,
   allowedDevOrigins: ["192.168.1.25", "*.local"],
-  turbopack: {
-    rules: {
-      "*.css": {
-        loaders: ["@tailwindcss/turbopack"],
-        as: "*.css",
-      },
-    },
-  },
 };
 
 export default nextConfig;

@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@source "../**/*.{ts,tsx,js,jsx}";
 
 /* Tek tema (açık). Sarı yalnız: STOP, aktif hap metni, birincil düğme, sayaç rozeti, Garsona göster zemini. */
 @theme {
