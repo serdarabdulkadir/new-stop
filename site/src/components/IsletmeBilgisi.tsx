@@ -1,7 +1,33 @@
 "use client";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { SayfaKabi } from "./Sayfa";
+
+// Çalışma saati 09:00–23:30, Türkiye saatine göre hesaplanır (cihaz saat dilimi ne olursa olsun)
+function acikMi(): boolean {
+  const s = new Intl.DateTimeFormat("tr-TR", {
+    timeZone: "Europe/Istanbul",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  }).format(new Date());
+  const [h, m] = s.split(":").map(Number);
+  const dk = h * 60 + m;
+  return dk >= 9 * 60 && dk < 23 * 60 + 30;
+}
+
+function AcikDurum() {
+  const acik = acikMi();
+  return (
+    <p className="flex items-center gap-2 text-[15px] font-medium text-soluk">
+      <span
+        aria-hidden="true"
+        className={`size-2 rounded-full ${acik ? "bg-ink" : "border border-soluk"}`}
+      />
+      {acik ? "Şu an açık · 23:30’a kadar" : "Şu an kapalı · 09:00’da açılır"}
+    </p>
+  );
+}
 
 export function IsletmeBilgisi({
   acik,
@@ -18,10 +44,7 @@ export function IsletmeBilgisi({
           <h2 className="text-[34px] font-bold leading-tight tracking-[-0.03em] text-ink">
             new stop?
           </h2>
-          <div className="inline-flex items-center gap-2 rounded-full bg-emerald-100/70 px-3 py-1 text-xs font-semibold tracking-wider text-emerald-800">
-            <span className="size-2 rounded-full bg-emerald-600 animate-pulse" />
-            <span>AÇIĞIZ · 23:30&apos;A KADAR</span>
-          </div>
+          <AcikDurum />
         </div>
 
         {/* Konsept ve Açıklama (Doğal, ferah ve kutusuz tasarım) */}
@@ -40,8 +63,8 @@ export function IsletmeBilgisi({
 
         {/* Çalışma Saatleri */}
         <div className="mt-5 border-t border-cizgi pt-4">
-          <span className="block text-[11px] font-bold tracking-wider text-soluk uppercase">
-            SAAT
+          <span className="block text-[13px] font-medium text-soluk">
+            Saat
           </span>
           <p className="mt-1 text-base font-semibold text-ink">
             Her gün 09:00 – 23:30
@@ -50,8 +73,8 @@ export function IsletmeBilgisi({
 
         {/* Adres */}
         <div className="mt-4 border-t border-cizgi pt-4">
-          <span className="block text-[11px] font-bold tracking-wider text-soluk uppercase">
-            ADRES
+          <span className="block text-[13px] font-medium text-soluk">
+            Adres
           </span>
           <p className="mt-1 text-[15px] font-medium leading-snug text-ink">
             Söğütlü Mah. Sahil Cad., Akçaabat / Trabzon
@@ -66,8 +89,8 @@ export function IsletmeBilgisi({
             rel="noopener noreferrer"
             className="flex min-h-12 w-full items-center justify-center gap-2 rounded-2xl bg-ink px-4 py-3.5 text-base font-semibold text-beyaz shadow-xs transition-transform active:scale-[0.98]"
           >
+            <MapPin size={18} strokeWidth={1.75} aria-hidden="true" />
             <span>Yol tarifi al</span>
-            <ArrowRight size={18} strokeWidth={2} />
           </a>
         </div>
 
@@ -86,10 +109,9 @@ export function IsletmeBilgisi({
               href="https://www.instagram.com/newstopcaferestaurant/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-xs font-bold tracking-wider text-soluk uppercase hover:text-ink"
+              className="inline-flex items-center gap-1 text-sm font-medium text-soluk underline underline-offset-4 hover:text-ink"
             >
-              <span>TAKİP ET</span>
-              <ArrowRight size={14} strokeWidth={2} />
+              <span>Instagram’da takip et</span>
             </a>
           </div>
 

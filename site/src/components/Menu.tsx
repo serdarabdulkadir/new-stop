@@ -89,7 +89,7 @@ function Vitrin({ onAc }: { onAc: Ac }) {
   );
 }
 
-function Bolum({ k, aktif, son, onAc, onEkle }: { k: Kategori; aktif: boolean; son: boolean; onAc: Ac; onEkle: Ekle }) {
+function Bolum({ k, aktif, onAc, onEkle }: { k: Kategori; aktif: boolean; son: boolean; onAc: Ac; onEkle: Ekle }) {
   return (
     <section
       id={`kat-${k.id}`}

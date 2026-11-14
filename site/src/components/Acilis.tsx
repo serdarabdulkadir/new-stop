@@ -5,16 +5,6 @@ import { T } from "@/lib/metin";
 import { zil } from "@/lib/ses";
 import { titret } from "@/lib/haptik";
 
-// Işınlar (STOP kutusunun iki yanı): yan, kenardan uzaklık, üst, açı
-const ISIN: Array<{ yan: "left" | "right"; kenar: number; ust: number; aci: number }> = [
-  { yan: "left", kenar: 20, ust: 92, aci: -34 },
-  { yan: "left", kenar: 12, ust: 118, aci: 0 },
-  { yan: "left", kenar: 20, ust: 146, aci: 34 },
-  { yan: "right", kenar: 20, ust: 92, aci: 34 },
-  { yan: "right", kenar: 12, ust: 118, aci: 0 },
-  { yan: "right", kenar: 20, ust: 146, aci: -34 },
-];
-
 export function Acilis({ onGec }: { onGec: () => void }) {
   const azalt = useReducedMotion();
   const [basildi, setBasildi] = useState(false);
@@ -41,39 +31,39 @@ export function Acilis({ onGec }: { onGec: () => void }) {
         <div className="px-4 py-3.5 text-[13px] tracking-[0.28em]">{T.marka}</div>
         <div className="grid flex-1 content-center justify-items-center gap-5 text-center">
           <h1 className="text-[46px] leading-none font-bold tracking-[-0.03em]">{T.acilis.baslik}</h1>
-          <div className="relative grid h-[240px] w-[200px] place-items-center">
-            <span className="absolute inset-y-0 left-1/2 w-[3px] -translate-x-1/2 bg-ink" aria-hidden="true" />
-            {ISIN.map(({ yan, kenar, ust, aci }, i) => (
-              <motion.b
-                key={i}
+          {/* Otobüs durak isteği düğmesi: tutunma borusu, kelepçeler, açık kasa (menünün çizgi dili), DURACAK paneli, basılan sarı düğme */}
+          <div className="relative h-[264px] w-[160px]">
+            <span aria-hidden="true" className="absolute inset-y-0 left-1/2 w-[3px] -translate-x-1/2 bg-ink" />
+            <span aria-hidden="true" className="absolute left-1/2 top-[42px] h-[12px] w-[22px] -translate-x-1/2 rounded-[3px] border-2 border-ink bg-beyaz" />
+            <span aria-hidden="true" className="absolute left-1/2 top-[214px] h-[12px] w-[22px] -translate-x-1/2 rounded-[3px] border-2 border-ink bg-beyaz" />
+            <div className="absolute left-1/2 top-[56px] flex h-[156px] w-[112px] -translate-x-1/2 flex-col items-center gap-4 rounded-[20px] border-[3px] border-ink bg-beyaz px-3 pt-3">
+              <motion.span
                 aria-hidden="true"
-                className="absolute h-[3px] w-5 rounded-sm bg-ink"
-                style={{ [yan]: kenar, top: ust, rotate: aci }}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: basildi ? 0.9 : 0 }}
-                transition={{ duration: azalt ? 0 : 0.2, delay: azalt ? 0 : (i % 3) * 0.06 }}
-              />
-            ))}
-            <div className="relative grid h-[128px] w-[100px] justify-items-center gap-3 rounded-[14px] border-[3px] border-ink bg-beyaz pt-4">
-              <motion.button
-                type="button"
-                onClick={bas}
-                aria-label={T.acilis.stopAria}
-                className="relative size-[68px] rounded-full border-[3px] border-ink bg-sari text-sm font-bold tracking-[0.04em]"
-                animate={basildi && !azalt ? { scale: [1, 0.9, 1], y: [0, 2, 0] } : undefined}
-                transition={{ duration: 0.25 }}
+                className="w-full rounded-md py-1 text-center text-[11px] font-bold tracking-[0.14em]"
+                initial={false}
+                animate={{ color: basildi ? "#FFD21F" : "#9C9890", backgroundColor: basildi ? "#161615" : "#ECEAE3" }}
+                transition={{ duration: azalt ? 0 : 0.15 }}
               >
-                {T.acilis.stop}
-                <motion.span
-                  aria-hidden="true"
-                  className="pointer-events-none absolute -inset-[3px] rounded-full border-[3px] border-sari"
-                  initial={{ opacity: 0 }}
-                  animate={basildi && !azalt ? { opacity: [1, 0], scale: [1, 2.5] } : { opacity: 0 }}
-                  transition={{ duration: 0.7, ease: "easeOut" }}
-                />
-              </motion.button>
-              <i className="block h-0.5 w-[52px] rounded-sm bg-ink/45" />
-              <i className="block h-0.5 w-[34px] translate-x-[-9px] rounded-sm bg-ink/45" />
+                DURACAK
+              </motion.span>
+              <span className="rounded-full bg-yuzey p-[5px]">
+                <button
+                  type="button"
+                  onClick={bas}
+                  aria-label={T.acilis.stopAria}
+                  className="relative block size-[76px] rounded-full"
+                >
+                  <span aria-hidden="true" className="absolute inset-0 translate-y-[5px] rounded-full border-[3px] border-ink bg-[#C9A200]" />
+                  <motion.span
+                    className="relative grid size-full place-items-center rounded-full border-[3px] border-ink bg-sari text-[15px] font-bold tracking-[0.06em] text-ink"
+                    initial={false}
+                    animate={basildi && !azalt ? { y: [0, 5, 5, 0] } : { y: 0 }}
+                    transition={{ duration: 0.38, times: [0, 0.2, 0.6, 1], ease: "easeOut" }}
+                  >
+                    {T.acilis.stop}
+                  </motion.span>
+                </button>
+              </span>
             </div>
           </div>
           <div className="grid gap-1">
