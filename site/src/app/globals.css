@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+/* Tek tema (açık). Sarı yalnız: STOP, aktif hap metni, birincil düğme, sayaç rozeti, Garsona göster zemini. */
+@theme {
+  --color-zemin: #f6f5f1;
+  --color-yuzey: #eceae3;
+  --color-ink: #161615;
+  --color-soluk: #5f5c56;
+  --color-cizgi: #dfdcd4;
+  --color-sari: #ffd21f;
+  --color-beyaz: #ffffff;
+  --font-sans: var(--font-familjen), system-ui, -apple-system, sans-serif;
+}
+
+html {
+  color-scheme: light;
+  touch-action: manipulation;
+  overscroll-behavior: none;
+}
+body {
+  background: var(--color-yuzey);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+}
+button {
+  cursor: pointer;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-ink);
+  outline-offset: 2px;
+  border-radius: 12px;
+}
+.rounded-full:focus-visible {
+  border-radius: 999px;
+}
+
+/* Yatay şeritlerde kaydırma çubuğu gizli */
+.serit {
+  scrollbar-width: none;
+}
+.serit::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

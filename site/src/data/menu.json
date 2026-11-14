@@ -1,0 +1,810 @@
+[
+ {
+  "id": "pizza",
+  "ad": "Pizza",
+  "ikon": "Pizza",
+  "urunler": [
+   {
+    "id": "pizza-karisik",
+    "ad": "Karışık",
+    "fiyat": 250
+   }
+  ]
+ },
+ {
+  "id": "tost",
+  "ad": "Tost çeşitleri",
+  "ikon": "Sandwich",
+  "urunler": [
+   {
+    "id": "tost-karisik-tost",
+    "ad": "Karışık Tost",
+    "ar": "توست مختلط",
+    "fiyat": 220
+   },
+   {
+    "id": "tost-kasarli-tost",
+    "ad": "Kaşarlı Tost",
+    "ar": "توست الجبن",
+    "fiyat": 210
+   }
+  ]
+ },
+ {
+  "id": "tatli",
+  "ad": "Tatlı ve pasta",
+  "ikon": "Cake",
+  "urunler": [
+   {
+    "id": "tatli-fistikli-marlenka",
+    "ad": "Fıstıklı Marlenka",
+    "ar": "مارلينكا الفستق",
+    "fiyat": 250
+   },
+   {
+    "id": "tatli-cevizli-marlenka",
+    "ad": "Cevizli Marlenka",
+    "ar": "الجوز مارلينكا",
+    "fiyat": 250
+   },
+   {
+    "id": "tatli-limonlu-cheesecake",
+    "ad": "Limonlu Cheesecake",
+    "fiyat": 200
+   },
+   {
+    "id": "tatli-fistik-dunyasi",
+    "ad": "Fıstık Dünyası",
+    "fiyat": 200
+   },
+   {
+    "id": "tatli-frambuazli-cheesecake",
+    "ad": "Frambuazlı Cheesecake",
+    "ar": "التوت كعكة الجبن",
+    "fiyat": 200
+   },
+   {
+    "id": "tatli-mozaik",
+    "ad": "Mozaik",
+    "fiyat": 200
+   },
+   {
+    "id": "tatli-n-snickers",
+    "ad": "N’Snickers",
+    "fiyat": 210
+   },
+   {
+    "id": "tatli-dubai",
+    "ad": "Dubai",
+    "fiyat": 200
+   }
+  ]
+ },
+ {
+  "id": "sicak",
+  "ad": "Sıcak içecekler",
+  "ikon": "Flame",
+  "urunler": [
+   {
+    "id": "sicak-cay",
+    "ad": "Çay",
+    "fiyat": 50
+   },
+   {
+    "id": "sicak-fincan-cay",
+    "ad": "Fincan Çay",
+    "fiyat": 85
+   },
+   {
+    "id": "sicak-karadut-cay",
+    "ad": "Karadut Çay",
+    "fiyat": 100
+   },
+   {
+    "id": "sicak-kivi-cay",
+    "ad": "Kivi Çay",
+    "fiyat": 100
+   },
+   {
+    "id": "sicak-nar-cay",
+    "ad": "Nar Çay",
+    "fiyat": 100
+   },
+   {
+    "id": "sicak-balli-sut",
+    "ad": "Ballı Süt",
+    "ar": "حليب بالعسل",
+    "fiyat": 150
+   },
+   {
+    "id": "sicak-sahlep",
+    "ad": "Sahlep",
+    "ar": "سحلب",
+    "fiyat": 200
+   },
+   {
+    "id": "sicak-cikolatali-sahlep",
+    "ad": "Çikolatalı Sahlep",
+    "ar": "شوكولا سحلبه",
+    "fiyat": 200
+   },
+   {
+    "id": "sicak-findikli-sahlep",
+    "ad": "Fındıklı Sahlep",
+    "ar": "سحلبه البندق",
+    "fiyat": 210
+   },
+   {
+    "id": "sicak-sicak-cikolata",
+    "ad": "Sıcak Çikolata",
+    "ar": "شكولاته ساخنة",
+    "fiyat": 200
+   },
+   {
+    "id": "sicak-beyaz-sicak-cikolata",
+    "ad": "Beyaz Sıcak Çikolata",
+    "ar": "شوكولاته بيضاء",
+    "fiyat": 200
+   },
+   {
+    "id": "sicak-sutlu-nescafe",
+    "ad": "Sütlü Nescafe",
+    "fiyat": 200
+   },
+   {
+    "id": "sicak-gold-kahve",
+    "ad": "Gold Kahve",
+    "fiyat": 190
+   }
+  ]
+ },
+ {
+  "id": "soguk-icecek",
+  "ad": "Soğuk içecekler",
+  "ikon": "CupSoda",
+  "urunler": [
+   {
+    "id": "soguk-icecek-su",
+    "ad": "Su",
+    "fiyat": 30
+   },
+   {
+    "id": "soguk-icecek-sade-soda",
+    "ad": "Sade Soda",
+    "ar": "صودا سادة",
+    "fiyat": 60
+   },
+   {
+    "id": "soguk-icecek-churchill",
+    "ad": "Churchill",
+    "ar": "تشرشل",
+    "fiyat": 90
+   },
+   {
+    "id": "soguk-icecek-meyveli-soda",
+    "ad": "Meyveli Soda",
+    "ar": "صودا الفاكهة",
+    "fiyat": 80,
+    "not": "Limon, Mandalina, Elma, Çilek"
+   },
+   {
+    "id": "soguk-icecek-fanta",
+    "ad": "Fanta",
+    "ar": "فانتا",
+    "fiyat": 90
+   },
+   {
+    "id": "soguk-icecek-coca-cola",
+    "ad": "Coca Cola",
+    "ar": "كوكا كولا",
+    "fiyat": 90
+   },
+   {
+    "id": "soguk-icecek-sprite",
+    "ad": "Sprite",
+    "ar": "العفاريت",
+    "fiyat": 90
+   },
+   {
+    "id": "soguk-icecek-schweppes",
+    "ad": "Schweppes",
+    "ar": "شويبس",
+    "fiyat": 100
+   },
+   {
+    "id": "soguk-icecek-cappy",
+    "ad": "Cappy",
+    "ar": "كابي",
+    "fiyat": 90,
+    "not": "Vişne, Şeftali, Portakal, Karışık"
+   },
+   {
+    "id": "soguk-icecek-ice-tea",
+    "ad": "Ice Tea",
+    "ar": "شاي مثلج",
+    "fiyat": 90,
+    "not": "Şeftali, Limon, Mango"
+   },
+   {
+    "id": "soguk-icecek-red-bull-energy-drink",
+    "ad": "Red Bull Energy Drink",
+    "ar": "مشروب طاقة ريد بُل",
+    "fiyat": 160
+   },
+   {
+    "id": "soguk-icecek-red-bull-ejder-meyvesi",
+    "ad": "Red Bull Ejder Meyvesi",
+    "ar": "ريد بُل دراغون فرويت",
+    "fiyat": 160
+   },
+   {
+    "id": "soguk-icecek-red-bull-hindistan-ceviz",
+    "ad": "Red Bull Hindistan Ceviz",
+    "ar": "ريد بُل بجوز الهند",
+    "fiyat": 160
+   },
+   {
+    "id": "soguk-icecek-red-bull-yaban-mersini",
+    "ad": "Red Bull Yaban Mersini",
+    "ar": "ريد بول توت بري",
+    "fiyat": 160
+   },
+   {
+    "id": "soguk-icecek-red-bull-seftali",
+    "ad": "Red Bull Şeftali",
+    "ar": "ريد بول خوخ",
+    "fiyat": 160
+   },
+   {
+    "id": "soguk-icecek-red-bull-tropical",
+    "ad": "Red Bull Tropical",
+    "ar": "ريد بُل تروبيكال",
+    "fiyat": 160
+   }
+  ]
+ },
+ {
+  "id": "bitki-caylari",
+  "ad": "Bitki çayları",
+  "ikon": "Leaf",
+  "urunler": [
+   {
+    "id": "bitki-caylari-ihlamur",
+    "ad": "Ihlamur",
+    "ar": "الزيزفون",
+    "fiyat": 200
+   },
+   {
+    "id": "bitki-caylari-nane-limon",
+    "ad": "Nane Limon",
+    "ar": "نعناع وليمون",
+    "fiyat": 200
+   },
+   {
+    "id": "bitki-caylari-ada-cayi",
+    "ad": "Ada Çayı",
+    "ar": "شاي المريمية",
+    "fiyat": 200
+   },
+   {
+    "id": "bitki-caylari-kis-cayi",
+    "ad": "Kış Çayı",
+    "ar": "شاي الشتاء",
+    "fiyat": 200
+   },
+   {
+    "id": "bitki-caylari-elma-cayi",
+    "ad": "Elma Çayı",
+    "ar": "شاي التفاح",
+    "fiyat": 200
+   },
+   {
+    "id": "bitki-caylari-rezene-cayi",
+    "ad": "Rezene Çayı",
+    "ar": "شاي الشمر",
+    "fiyat": 200
+   },
+   {
+    "id": "bitki-caylari-yesil-cay",
+    "ad": "Yeşil Çay",
+    "ar": "شاي أخضر",
+    "fiyat": 200
+   },
+   {
+    "id": "bitki-caylari-kus-burnu",
+    "ad": "Kuş Burnu",
+    "ar": "ثمر الورد",
+    "fiyat": 200
+   },
+   {
+    "id": "bitki-caylari-papatya-cayi",
+    "ad": "Papatya Çayı",
+    "ar": "شاي البابونج",
+    "fiyat": 200
+   },
+   {
+    "id": "bitki-caylari-melisa",
+    "ad": "Melisa",
+    "ar": "بلسم",
+    "fiyat": 200
+   },
+   {
+    "id": "bitki-caylari-atom",
+    "ad": "Atom",
+    "ar": "ذرة",
+    "fiyat": 250
+   }
+  ]
+ },
+ {
+  "id": "turk-kahvesi",
+  "ad": "Türk kahvesi",
+  "ikon": "Bean",
+  "urunler": [
+   {
+    "id": "turk-kahvesi-turk-kahvesi",
+    "ad": "Türk Kahvesi",
+    "ar": "قهوة تركية",
+    "fiyat": 140,
+    "foto": "/img/turk.webp",
+    "not": "Sade, Orta, Şekerli"
+   },
+   {
+    "id": "turk-kahvesi-double-turk-kahvesi",
+    "ad": "Double Türk Kahvesi",
+    "ar": "الذهب البني",
+    "fiyat": 200
+   },
+   {
+    "id": "turk-kahvesi-sutlu-turk-kahvesi",
+    "ad": "Sütlü Türk Kahvesi",
+    "ar": "قهوة تركية بالحليب",
+    "fiyat": 150
+   },
+   {
+    "id": "turk-kahvesi-sutlu-double-turk-kahvesi",
+    "ad": "Sütlü Double Türk Kahvesi",
+    "fiyat": 210
+   },
+   {
+    "id": "turk-kahvesi-menengic-kahvesi",
+    "ad": "Menengiç Kahvesi",
+    "ar": "قهوة مينينجيك",
+    "fiyat": 140
+   },
+   {
+    "id": "turk-kahvesi-dibek-kahvesi",
+    "ad": "Dibek Kahvesi",
+    "ar": "قهوة ديبك",
+    "fiyat": 140
+   },
+   {
+    "id": "turk-kahvesi-filtre-kahve",
+    "ad": "Filtre Kahve",
+    "ar": "قهوة مفلترة",
+    "fiyat": 200,
+    "not": "Colombia, Guatemala, Kenya"
+   },
+   {
+    "id": "turk-kahvesi-sutlu-filtre-kahve",
+    "ad": "Sütlü Filtre Kahve",
+    "ar": "قهوة حليبي جولد",
+    "fiyat": 210
+   },
+   {
+    "id": "turk-kahvesi-damla-sakizli-turk-kahvesi",
+    "ad": "Damla Sakızlı Türk Kahvesi",
+    "ar": "قهوة تركية باللثة",
+    "fiyat": 140
+   }
+  ]
+ },
+ {
+  "id": "espresso",
+  "ad": "Espresso bazlı kahveler",
+  "ikon": "Coffee",
+  "urunler": [
+   {
+    "id": "espresso-espresso",
+    "ad": "Espresso",
+    "ar": "إسبرسو",
+    "fiyat": 150
+   },
+   {
+    "id": "espresso-double-espresso",
+    "ad": "Double Espresso",
+    "ar": "إسبرسو مزدوج",
+    "fiyat": 190
+   },
+   {
+    "id": "espresso-americano",
+    "ad": "Americano",
+    "ar": "أمريكانو",
+    "fiyat": 190
+   },
+   {
+    "id": "espresso-latte",
+    "ad": "Latte",
+    "ar": "لاتيه",
+    "fiyat": 190,
+    "surup": true,
+    "foto": "/img/latte.webp"
+   },
+   {
+    "id": "espresso-cappuccino",
+    "ad": "Cappuccino",
+    "ar": "كابتشينو",
+    "fiyat": 190,
+    "surup": true
+   },
+   {
+    "id": "espresso-mocha",
+    "ad": "Mocha",
+    "ar": "موكا",
+    "fiyat": 200,
+    "surup": true
+   },
+   {
+    "id": "espresso-white-mocha",
+    "ad": "White Mocha",
+    "ar": "وايت موكا",
+    "fiyat": 200,
+    "surup": true
+   },
+   {
+    "id": "espresso-latte-macchiato",
+    "ad": "Latte Macchiato",
+    "ar": "كراميل ماكياتو",
+    "fiyat": 190,
+    "surup": true
+   },
+   {
+    "id": "espresso-espresso-macchiato",
+    "ad": "Espresso Macchiato",
+    "ar": "اسبريسو لاتيه ماكياتو",
+    "fiyat": 200
+   },
+   {
+    "id": "espresso-cortado",
+    "ad": "Cortado",
+    "fiyat": 190
+   }
+  ]
+ },
+ {
+  "id": "soguk-kahve",
+  "ad": "Soğuk kahveler",
+  "ikon": "Snowflake",
+  "urunler": [
+   {
+    "id": "soguk-kahve-ice-americano",
+    "ad": "Ice Americano",
+    "ar": "آيس أمريكانو",
+    "fiyat": 170
+   },
+   {
+    "id": "soguk-kahve-ice-latte",
+    "ad": "Ice Latte",
+    "ar": "ايس لاتيه",
+    "fiyat": 180,
+    "surup": true,
+    "foto": "/img/trio.webp"
+   },
+   {
+    "id": "soguk-kahve-ice-mocha",
+    "ad": "Ice Mocha",
+    "ar": "مثلج موكا",
+    "fiyat": 200,
+    "surup": true,
+    "foto": "/img/trio.webp"
+   },
+   {
+    "id": "soguk-kahve-ice-white-mocha",
+    "ad": "Ice White Mocha",
+    "ar": "آيس وايت موكا",
+    "fiyat": 200,
+    "surup": true,
+    "foto": "/img/trio.webp"
+   },
+   {
+    "id": "soguk-kahve-ice-latte-macchiato",
+    "ad": "Ice Latte Macchiato",
+    "fiyat": 180,
+    "surup": true
+   }
+  ]
+ },
+ {
+  "id": "milkshake",
+  "ad": "Milkshake",
+  "ikon": "Milk",
+  "urunler": [
+   {
+    "id": "milkshake-cilekli-milkshake",
+    "ad": "Çilekli Milkshake",
+    "fiyat": 250
+   },
+   {
+    "id": "milkshake-vanilyali-milkshake",
+    "ad": "Vanilyalı Milkshake",
+    "fiyat": 250
+   },
+   {
+    "id": "milkshake-karamel-milkshake",
+    "ad": "Karamel Milkshake",
+    "fiyat": 250
+   },
+   {
+    "id": "milkshake-cikolatali-milkshake",
+    "ad": "Çikolatalı Milkshake",
+    "fiyat": 250,
+    "foto": "/img/shake.webp"
+   }
+  ]
+ },
+ {
+  "id": "frozen",
+  "ad": "Frozen",
+  "ikon": "IceCreamBowl",
+  "urunler": [
+   {
+    "id": "frozen-visne-frozen",
+    "ad": "Vişne Frozen",
+    "fiyat": 240
+   },
+   {
+    "id": "frozen-karpuz-frozen",
+    "ad": "Karpuz Frozen",
+    "fiyat": 240,
+    "foto": "/img/karpuz.webp"
+   },
+   {
+    "id": "frozen-cilek-frozen",
+    "ad": "Çilek Frozen",
+    "fiyat": 240
+   },
+   {
+    "id": "frozen-kavun-frozen",
+    "ad": "Kavun Frozen",
+    "fiyat": 240
+   },
+   {
+    "id": "frozen-limon-frozen",
+    "ad": "Limon Frozen",
+    "fiyat": 240
+   },
+   {
+    "id": "frozen-mango-frozen",
+    "ad": "Mango Frozen",
+    "fiyat": 240
+   },
+   {
+    "id": "frozen-seftali-frozen",
+    "ad": "Şeftali Frozen",
+    "fiyat": 240
+   },
+   {
+    "id": "frozen-bogurtlen-frozen",
+    "ad": "Böğürtlen Frozen",
+    "fiyat": 240
+   }
+  ]
+ },
+ {
+  "id": "bubble-tea",
+  "ad": "Bubble tea",
+  "ikon": "GlassWater",
+  "urunler": [
+   {
+    "id": "bubble-tea-nar",
+    "ad": "Nar",
+    "fiyat": 230,
+    "not": "Yeşil elma, limon, nar"
+   },
+   {
+    "id": "bubble-tea-yaban-mersini",
+    "ad": "Yaban Mersini",
+    "fiyat": 230,
+    "foto": "/img/bubble.webp",
+    "not": "Süt, ejder meyvesi, yaban mersini"
+   }
+  ]
+ },
+ {
+  "id": "frappe",
+  "ad": "Frappeler",
+  "ikon": "Blend",
+  "urunler": [
+   {
+    "id": "frappe-frappe",
+    "ad": "Frappe",
+    "ar": "فرابي",
+    "fiyat": 260,
+    "not": "Çikolata, Karamel, Vanilya, Oreo, Muz, Limon, Çilek"
+   }
+  ]
+ },
+ {
+  "id": "sikma-meyveler",
+  "ad": "Sıkma meyveler",
+  "ikon": "Citrus",
+  "urunler": [
+   {
+    "id": "sikma-meyveler-cilekli-limonata",
+    "ad": "Çilekli Limonata",
+    "ar": "ليموناضة الفراولة",
+    "fiyat": 180
+   },
+   {
+    "id": "sikma-meyveler-limonata",
+    "ad": "Limonata",
+    "ar": "عصير الليمون",
+    "fiyat": 180
+   },
+   {
+    "id": "sikma-meyveler-narli-limonata",
+    "ad": "Narlı Limonata",
+    "fiyat": 180
+   }
+  ]
+ },
+ {
+  "id": "kokteyl",
+  "ad": "Kokteyl",
+  "ikon": "Martini",
+  "urunler": [
+   {
+    "id": "kokteyl-elma-mojito",
+    "ad": "Elma Mojito",
+    "fiyat": 270
+   },
+   {
+    "id": "kokteyl-cool-lime",
+    "ad": "Cool Lime",
+    "fiyat": 250
+   },
+   {
+    "id": "kokteyl-berry-hibiscus",
+    "ad": "Berry Hibiscus",
+    "fiyat": 260
+   },
+   {
+    "id": "kokteyl-kuzu-kulagi",
+    "ad": "Kuzu Kulağı",
+    "fiyat": 260
+   },
+   {
+    "id": "kokteyl-peach-berry",
+    "ad": "Peach Berry",
+    "fiyat": 280
+   },
+   {
+    "id": "kokteyl-life-stop",
+    "ad": "Life Stop",
+    "fiyat": 280
+   },
+   {
+    "id": "kokteyl-blue-lagoon",
+    "ad": "Blue Lagoon",
+    "fiyat": 260,
+    "foto": "/img/blue.webp",
+    "not": "Sprite, turuç aroma, limon"
+   }
+  ]
+ },
+ {
+  "id": "nargile",
+  "ad": "Nargile",
+  "ikon": "Wind",
+  "urunler": [
+   {
+    "id": "nargile-karisim",
+    "ad": "Karışım",
+    "ar": "خليط",
+    "fiyat": 450
+   },
+   {
+    "id": "nargile-nargileci-ozel-karisim",
+    "ad": "Nargileci Özel Karışım",
+    "ar": "شيشة خلطة خاصة",
+    "fiyat": 450
+   },
+   {
+    "id": "nargile-lule-degisimi",
+    "ad": "Lüle Değişimi",
+    "ar": "تغيير الأنابيب",
+    "fiyat": 250
+   },
+   {
+    "id": "nargile-nane",
+    "ad": "Nane",
+    "ar": "نعناع",
+    "fiyat": 450
+   },
+   {
+    "id": "nargile-momento",
+    "ad": "Momento",
+    "ar": "تذكار",
+    "fiyat": 500
+   },
+   {
+    "id": "nargile-vivident",
+    "ad": "Vivident",
+    "ar": "حي",
+    "fiyat": 450
+   },
+   {
+    "id": "nargile-limon",
+    "ad": "Limon",
+    "ar": "ليمون",
+    "fiyat": 450
+   },
+   {
+    "id": "nargile-kavun",
+    "ad": "Kavun",
+    "ar": "شمام",
+    "fiyat": 450
+   },
+   {
+    "id": "nargile-pismis-seftali",
+    "ad": "Pişmiş Şeftali",
+    "ar": "مطبوخ الخوخ",
+    "fiyat": 500
+   },
+   {
+    "id": "nargile-cola",
+    "ad": "Cola",
+    "ar": "الكولا",
+    "fiyat": 450
+   },
+   {
+    "id": "nargile-portakal",
+    "ad": "Portakal",
+    "ar": "البرتقالي",
+    "fiyat": 450
+   },
+   {
+    "id": "nargile-cilek",
+    "ad": "Çilek",
+    "ar": "الفراولة",
+    "fiyat": 450
+   },
+   {
+    "id": "nargile-visne",
+    "ad": "Vişne",
+    "ar": "الكرز",
+    "fiyat": 450
+   },
+   {
+    "id": "nargile-cift-elma",
+    "ad": "Çift Elma",
+    "ar": "تفاحة مزدوجة",
+    "fiyat": 450
+   },
+   {
+    "id": "nargile-karamel",
+    "ad": "Karamel",
+    "ar": "الكراميل",
+    "fiyat": 450
+   },
+   {
+    "id": "nargile-findik",
+    "ad": "Fındık",
+    "ar": "البندق",
+    "fiyat": 450
+   }
+  ]
+ },
+ {
+  "id": "dondurma",
+  "ad": "Dondurma",
+  "ikon": "IceCreamCone",
+  "urunler": [
+   {
+    "id": "dondurma-1-top",
+    "ad": "1 Top",
+    "fiyat": 70
+   }
+  ]
+ }
+]

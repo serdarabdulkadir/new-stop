@@ -1,0 +1,495 @@
+New Stop | Menü | Komisyonsuz Online Sipariş Hattı
+New Stop
+tr
+tr
+Menü Görünüm:
+New Stop Cafe Hoşgeldiniz !
+PİZZA
+TOST ÇEŞİTLERİ(أصناف التوست)
+TATLI VE PASTA(حلويات وكيك)
+Sıcak İçecekler(مشروبات ساخنة)
+SOĞUK İÇECEKLER(المشروبات الباردة)
+BİTKİ ÇAYLARI
+TÜRK KAHVE ÇEŞİTLERİ(أنواع القهوة)
+ESPRESSO BAZLI KAHVELER(قهوة اسبريسو)
+SOĞUK KAHVELER(قهوة باردة)
+MİLKSHAKE(اللبن المخفوق)
+FROZEN(مجمدة)
+BUBBLE TEA
+FRAPPELER(فرابس)
+SIKMA MEYVELER(فواكه مضغوطة)
+KOKTEYL(كوكتيل)
+NARGİLE(نارجيل)
+DONDURMA
+PİZZA
+KARIŞIK
+250
+₺
+TOST ÇEŞİTLERİ(أصناف التوست)
+Karışık Tost(توست مختلط)
+220
+₺
+Kaşarlı Tost(توست الجبن)
+210
+₺
+TATLI VE PASTA(حلويات وكيك)
+Fıstıklı Marlenka(مارلينكا الفستق)
+250
+₺
+Cevizli Marlenka(الجوز مارلينكا)
+250
+₺
+Limonlu Cheese Cake
+200
+₺
+Fıstık Dünyası
+200
+₺
+Frambuazlı Cheese Cake(التوت كعكة الجبن)
+200
+₺
+mozaik
+200
+₺
+N’Snickers
+210
+₺
+DUBAİ
+200
+₺
+Sıcak İçecekler(مشروبات ساخنة)
+ÇAY
+50
+₺
+Fincan ÇAY
+85
+₺
+KARADUT ÇAY
+100
+₺
+KİVİ ÇAY
+100
+₺
+NAR ÇAY
+100
+₺
+Ballı  Süt(حليب بالعسل)
+150
+₺
+Sahlep(سحلب)
+200
+₺
+Çikolatalı Sahlep(شوكولا سحلبه)
+200
+₺
+Fındıklı Sahlep(سحلبه البندق)
+210
+₺
+Sıcak Çikolata(شكولاته ساخنة)
+200
+₺
+Beyaz Sıcak Çikolata(شوكولاته بيضاء)
+200
+₺
+SÜTLÜ NESCAFE
+200
+₺
+GOLD KAHVE
+190
+₺
+SOĞUK İÇECEKLER(المشروبات الباردة)
+SU
+30
+₺
+Sade Soda(صودا سادة)
+60
+₺
+Churchill(تشرشل)
+90
+₺
+Meyveli Soda(صودا الفاكهة)
+80
+₺
+Limon,Mandalina,Elma,Çilekليمون ، كرز ، تفاح ، فراولة ، خوخ)
+Fanta(فانتا)
+90
+₺
+Coca Cola(كوكا كولا)
+90
+₺
+Sprite(العفاريت)
+90
+₺
+Schweppes(شويبس)
+100
+₺
+Cappy(كابي)
+90
+₺
+Vişne,Şeftali,Portakal,Karışık(كرز ، خوخ ، برتقال ، مشكل)
+Ice Tea(شاي مثلج)
+90
+₺
+Şeftali,Limon,Mango(خوخ ، ليمون ، مانجو)
+Red Bull Energy Drınk(مشروب طاقة ريد بُل)
+160
+₺
+Red Bull EJDER MEYVESİ(ريد بُل دراغون فرويت)
+160
+₺
+Red Bull HİNDİSTAN CEVİZ(ريد بُل بجوز الهند)
+160
+₺
+Red Bull YABAN MERSİNİ(ريد بول توت بري)
+160
+₺
+Red Bull ŞEFTALİ(ريد بول خوخ)
+160
+₺
+Red Bull TROPİCAL(ريد بُل تروبيكال)
+160
+₺
+BİTKİ ÇAYLARI
+Ihlamur(الزيزفون)
+200
+₺
+Nane Limon(نعناع وليمون)
+200
+₺
+Ada Çayı(شاي المريمية)
+200
+₺
+Kış Çayı(شاي الشتاء)
+200
+₺
+Elma Çayı(شاي التفاح)
+200
+₺
+Rezene Çayı(شاي الشمر)
+200
+₺
+Yeşil Çay(شاي أخضر)
+200
+₺
+Kuş Burnu(ثمر الورد)
+200
+₺
+Papatya Çayı(شاي البابونج)
+200
+₺
+Melisa(بلسم)
+200
+₺
+Atom(ذرة)
+250
+₺
+TÜRK KAHVE ÇEŞİTLERİ(أنواع القهوة)
+Türk Kahvesi(قهوة تركية)
+140
+₺
+Sade,Orta,Şekerli(عادي ، متوسط ​​، محلى)
+DOUBLE TÜRK Kahveİ(الذهب البني)
+200
+₺
+Sütlü Türk Kahvesi(قهوة تركية بالحليب)
+150
+₺
+SÜTLÜ DOUBLE TÜRK KAHVESİ
+210
+₺
+Menengiç Kahvesi(قهوة مينينجيك)
+140
+₺
+Dibek Kahvesi(قهوة ديبك)
+140
+₺
+Filtre Kahve(قهوة مفلترة)
+200
+₺
+Colombia,Guatemala,Kenya
+SÜTLÜ FİLTRE KAHVE(قهوة حليبي جولد)
+210
+₺
+Damla Sakızlı Türk Kahvesi(قهوة تركية باللثة)
+140
+₺
+ESPRESSO BAZLI KAHVELER(قهوة اسبريسو)
+Espresso(إسبرسو)
+150
+₺
+Double Espresso(إسبرسو مزدوج)
+190
+₺
+Americano(أمريكانو)
+190
+₺
+Latte(لاتيه)
+190
+₺
+Cappuccino(كابتشينو)
+190
+₺
+Mocha(موكا)
+200
+₺
+White Mocha(وايت موكا)
+200
+₺
+Latte  Macchiato(كراميل ماكياتو)
+190
+₺
+Espresso   Macchiato(اسبريسو لاتيه ماكياتو)
+200
+₺
+Cortado
+190
+₺
+SOĞUK KAHVELER(قهوة باردة)
+İce Americano(آيس أمريكانو)
+170
+₺
+Ice Latte(ايس لاتيه)
+180
+₺
+Ice Mocha(مثلج موكا)
+200
+₺
+Ice White Mocha(آيس وايت موكا)
+200
+₺
+Ice Latte Macchiato
+180
+₺
+Karamel,Fındık,Vanilya,Çilek(كراميل ، مكسرات ، فانيليا ، نعناع)
+MİLKSHAKE(اللبن المخفوق)
+ÇİLEKLİ MİLKSHAKE
+250
+₺
+VANİLYALI MİLKSHAKE
+250
+₺
+KARAMEL MİLKSHAKE
+250
+₺
+ÇİKOLATALI MİLKSHAKE
+250
+₺
+FROZEN(مجمدة)
+VİŞNE FROZEN
+240
+₺
+KARPUZ FROZEN
+240
+₺
+ÇİLEK FROZEN
+240
+₺
+KAVUN FROZEN
+240
+₺
+LİMON FROZEN
+240
+₺
+MANGO FROZEN
+240
+₺
+ŞEFTALİ FROZEN
+240
+₺
+BÖĞÜRTLEN FROZEN
+240
+₺
+BUBBLE TEA
+NAR
+230
+₺
+AROMA=YEŞİL ELMA, LİMON,NAR
+YABAN MERSİNİ
+230
+₺
+AROMA=SÜT ,EJDER MEYVESİ,YABAN MERSİNİ
+NAR
+AROMA= YEŞİL ÇAY,NAR , NANE ,LİMON
+ÇİLEK
+AROMA=LİMONATA ,ÇİLEK , NANE
+FRAPPELER(فرابس)
+FRAPPE(فرابي)
+260
+₺
+Çikolata,Karamel,Vanilya,Oreo,Muz,Limon,Çilek(شوكولاتة ، كراميل ، فانيليا ، أوريو ، موز ، ليمون ، فراولة)
+SIKMA MEYVELER(فواكه مضغوطة)
+Çilekli  Limonata(ليموناضة الفراولة)
+180
+₺
+Limonata(عصير الليمون)
+180
+₺
+NARLI LİMONATA
+180
+₺
+KOKTEYL(كوكتيل)
+ELMA MOJİTO
+270
+₺
+Cool  Lime
+250
+₺
+Berry Hibiscus
+260
+₺
+KUZU KULAĞI
+260
+₺
+Peach Berry
+280
+₺
+Life stop
+280
+₺
+BLUE LAGOON
+260
+₺
+İÇERİK = SPRİTE,TURUÇ AROMA,LİMON
+NARGİLE(نارجيل)
+karışım(خليط)
+450
+₺
+Nargileci Özel Karışım(شيشة خلطة خاصة)
+450
+₺
+Lüle Değişimi(تغيير الأنابيب)
+250
+₺
+Nane(نعناع)
+450
+₺
+Momento(تذكار)
+500
+₺
+Vivident(حي)
+450
+₺
+Limon(ليمون)
+450
+₺
+Kavun(شمام)
+450
+₺
+Pişmiş Şeftali(مطبوخ الخوخ)
+500
+₺
+Cola(الكولا)
+450
+₺
+Portakal(البرتقالي)
+450
+₺
+Çilek(الفراولة)
+450
+₺
+Vişne(الكرز)
+450
+₺
+Çift elma(تفاحة مزدوجة)
+450
+₺
+Karamel(الكراميل)
+450
+₺
+Fındık(البندق)
+450
+₺
+DONDURMA
+1 TOP
+70
+₺
+Fiyatlar en son 06.10.2026 tarihinde güncellenmiştir.
+Yol Tarifi
+KAPAT
+Google Maps ile Yol Tarifi
+Yandex ile Yol Tarifi
+Siparişim
+Siparişim
+KAPAT
+Siparişim
+Geçmiş Siparişlerim
+Henüz siparişiniz bulunmamaktadır.
+Sipariş Listesi
+Sipariş notu ekle
+Not
+Sipariş Yeri
+Merkez
+Sipariş Tipi
+Paket Sipariş
+Gel-al Sipariş
+Alım Zamanı
+Tarih
+Saat
+En erken 30 dakika sonrası için sipariş verebilirsiniz.
+Teslimat Adresi
+Tam Konumunuzu Paylaşın
+Haritayı kaydırarak ortadaki işareti tam kapınızın üzerine getirin.
+Şu anki konumu al
+Konumu kaldır
+Ad Soyad
+Telefon
+Ödeme Tipi
+K.Kartı
+Nakit
+Diğer
+Ara Toplam
+İndirim
+İndirim kodu
+Kurye Ücreti
+Toplam (ücretler ve vergi dahil)
+bölgesi için minimum sipariş tutarı:
+₺
+Siparişimi İlet
+veya
+Ara: 0534 348 49 98
+Ad, telefon ve adres bilgileriniz siparişinizin hazırlanması, teslimi ve sonraki siparişlerinizde tekrar yazmak zorunda kalmamanız için işletme tarafından işlenir.
+Aydınlatma Metni
+Tamam
+New Stop
+04622481111
+Yol Tarifi
+Yorumlar
+Uygulama
+Uygulama
+Çerez Ayarları
+Bu sayfa
+Dijital Menü Platformu
+ile oluşturulmuştur.
+2026 ©
+KAPAT
+Dil Seçenekleri:
+KAPAT
+Türkçe
+English
+عربى
+Ürün Detayı
+Kapat
+Çerez Tercihleriniz
+Menünün çalışması için gerekli çerezleri kullanıyoruz. Kabul ederseniz ziyaret istatistikleri toplar ve yazı tipini harici servislerden yükleyerek size iyi bir deneyim sunabiliriz.
+Çerez Politikası
+Gerekli
+Dil seçimi, sepet ve oturum gibi menünün çalışması için zorunlu kayıtlar. Her zaman açıktır.
+İstatistik
+Ziyaret istatistikleri (Google Analytics). Kapalıyken IP adresiniz anonimleştirilerek işlenir.
+Harici İçerik
+Menü yazı tipinin Google Fonts gibi harici servislerden yüklenmesi. Kapalıyken standart yazı tipi kullanılır.
+Yalnızca Gerekli
+Tümünü Kabul Et
+Seçimi Kaydet
+Özelleştir
+Seçenekler
+KAPAT
+Yükleniyor...
+Toplam:
+0₺
+Sepete Ekle
+KAPAT
+Yükleniyor...
+Menü ücreti
+₺
+Siparişime ekle

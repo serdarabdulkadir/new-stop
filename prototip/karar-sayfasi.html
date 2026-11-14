@@ -1,0 +1,266 @@
+<title>Newstop Yön Seçimi</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=Bricolage+Grotesque:wght@700;800&family=Hanken+Grotesk:wght@400;600&family=Big+Shoulders+Display:wght@700;800&family=Familjen+Grotesk:wght@400;600;700&family=IBM+Plex+Mono:wght@500;600&family=Instrument+Sans:wght@400;600&display=swap">
+<style>
+/* Layout: üstte karar özeti, ortada 4 canlı açılış denemesi (telefon kartları), altta uzman analizi */
+:root{
+  --bg:#f3f2ee;--surface:#ffffff;--fg:#171716;--muted:#66635c;--line:#dcd9d1;--accent:#e0b400;--accent-ink:#171716;
+  --ui:"Instrument Sans",system-ui,sans-serif;--disp:"Archivo",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121211;--surface:#1c1c1a;--fg:#efede7;--muted:#a19d94;--line:#2f2e2b;--accent:#ffd21f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121211;--surface:#1c1c1a;--fg:#efede7;--muted:#a19d94;--line:#2f2e2b;--accent:#ffd21f;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:15px/1.55 var(--ui)}
+.wrap{max-width:1240px;margin:0 auto;padding-block:36px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:36px}
+h1,h2,h3{font-family:var(--disp);margin:0;text-wrap:balance;letter-spacing:-.01em}
+h1{font-size:clamp(28px,4.6vw,44px);font-weight:900;line-height:1.05}
+h2{font-size:24px;font-weight:900}
+p{margin:0;max-width:70ch}
+.lead{color:var(--muted);font-size:17px}
+.top{display:flex;flex-wrap:wrap;gap:16px;align-items:end;justify-content:space-between}
+.sound{display:inline-flex;align-items:center;gap:10px;border:1.5px solid var(--line);background:var(--surface);color:var(--fg);border-radius:999px;padding:10px 16px;font:600 14px var(--ui);cursor:pointer}
+.sound[aria-pressed="false"]{color:var(--muted)}
+.sound:focus-visible,.demo button:focus-visible,.knob:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px;display:grid;gap:12px;align-content:start;min-width:0}
+.card .meta{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.tag{font:600 12px var(--mono);color:var(--muted)}
+.card p{font-size:14px;color:var(--muted)}
+.card a{color:var(--fg);font-weight:600;font-size:14px}
+.badge{font:600 11px var(--mono);padding:2px 8px;border-radius:99px;background:var(--line);color:var(--fg)}
+.badge.fav{background:var(--accent);color:var(--accent-ink)}
+.demo{position:relative;height:500px;border-radius:22px;overflow:hidden;user-select:none;-webkit-user-select:none;touch-action:none}
+.demo button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.reset{position:absolute;top:10px;right:10px;z-index:5;font:600 11px var(--mono)!important;padding:5px 9px!important;border-radius:99px;background:rgba(127,127,127,.18)!important}
+.hint{position:absolute;left:0;right:0;bottom:16px;text-align:center;font-size:13px}
+
+/* v1 pano */
+.d1{background:#0d0d0c;color:#f2eee3;padding:40px 14px;display:grid;align-content:start;gap:10px}
+.d1 .row{display:flex;gap:3px;align-items:center}
+.d1 .code{font:600 11px var(--mono);color:#ffd21f;width:26px}
+.flap{width:19px;height:27px;background:#262624;border-radius:3px;display:grid;place-items:center;font:700 18px "Big Shoulders Display",sans-serif;position:relative}
+.flap::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:#0d0d0c}
+.d1 .go{margin-top:14px;justify-self:center;background:#ffd21f!important;color:#0d0d0c!important;padding:10px 18px!important;border-radius:999px;font-weight:600}
+
+/* v2 STOP */
+.d2{background:#f6f5f1;color:#161615;display:grid;justify-items:center;align-content:center;gap:18px;font-family:"Familjen Grotesk",sans-serif}
+.d2 h3{font:700 38px "Familjen Grotesk",sans-serif;letter-spacing:-.03em}
+.pole{position:relative;width:200px;height:230px;display:grid;place-items:center}
+.pole::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:3px;background:#161615;transform:translateX(-50%)}
+.box{position:relative;width:96px;height:124px;background:#fff;border:3px solid #161615;border-radius:14px;display:grid;justify-items:center;padding-top:16px}
+.stop{width:64px;height:64px;border-radius:50%;background:#ffd21f;border:3px solid #161615!important;font:700 14px "Familjen Grotesk",sans-serif!important;transition:transform .12s;position:relative}
+.stop.down{transform:scale(.9) translateY(2px)}
+.ring{position:absolute;inset:-3px;border-radius:50%;border:3px solid #ffd21f;opacity:0;pointer-events:none}
+.ring.go{animation:ring .7s ease-out}
+@keyframes ring{from{opacity:1;transform:scale(1)}to{opacity:0;transform:scale(2.4)}}
+.d2 .menu{position:absolute;inset:0;background:#f6f5f1;transform:translateY(100%);transition:transform .45s cubic-bezier(.2,.8,.2,1);padding:44px 18px;display:grid;align-content:start;gap:10px}
+.d2 .menu.in{transform:none}
+.d2 .menu b{font-size:22px}
+.d2 .li{display:flex;justify-content:space-between;border-bottom:1px solid #dfdcd4;padding:10px 0;font-size:15px}
+
+/* v3 neon */
+.d3{background:#14110f;color:#f5ede3;display:grid;justify-items:center;align-content:center;gap:30px;transition:background .6s;font-family:"Instrument Sans",sans-serif}
+.d3.lit{background:radial-gradient(120% 70% at 50% 35%,#3a2216 0%,#14110f 62%)}
+.neon{font:700 88px/0.92 "Big Shoulders Display",sans-serif;text-align:center;letter-spacing:.04em;color:transparent;-webkit-text-stroke:1.5px #5a4337;transition:none}
+.neon.on{color:#fff2e4;-webkit-text-stroke:1.5px #ff7a2e;text-shadow:0 0 6px #ff7a2e,0 0 22px #ff7a2e,0 0 48px rgba(255,122,46,.6)}
+.switch{width:70px;height:104px;background:#211c19;border:3px solid #3a322c!important;border-radius:12px;display:grid;place-items:center}
+.switch span{width:30px;height:54px;border:2px solid #5a4337;border-radius:7px;display:flex;align-items:flex-end;padding:3px;transition:align-items .1s}
+.switch span i{display:block;width:100%;height:22px;background:#f5ede3;border-radius:4px}
+.switch.on span{align-items:flex-start}
+
+/* v4 radyo */
+.d4{background:#ffd21f;color:#151514;display:grid;justify-items:center;align-content:center;gap:16px;font-family:Archivo,sans-serif}
+.freq{font:600 76px/1 "IBM Plex Mono",monospace;letter-spacing:-.06em;font-variant-numeric:tabular-nums}
+.freq small{font:900 20px Archivo,sans-serif;letter-spacing:0;margin-left:6px}
+.scale{position:relative;width:240px;height:30px;background:repeating-linear-gradient(90deg,#151514 0 1px,transparent 1px 12px);opacity:.85}
+.needle{position:absolute;top:-4px;bottom:-4px;width:3px;background:#e0342b;left:0}
+.station{position:absolute;top:-16px;font:600 10px "IBM Plex Mono",monospace;transform:translateX(-50%)}
+.knob{width:132px;height:132px;border-radius:50%;background:#151514;box-shadow:0 0 0 6px #ffd21f,0 0 0 8px #151514;position:relative;cursor:grab;touch-action:none}
+.knob::after{content:"";position:absolute;left:50%;top:10px;width:6px;height:22px;margin-left:-3px;border-radius:3px;background:#ffd21f}
+.d4 .status{font-weight:700;font-size:15px;min-height:22px}
+.d4 .auto{font:600 12px "IBM Plex Mono",monospace!important;border:1.5px solid #151514!important;border-radius:999px;padding:6px 12px!important}
+
+/* v5 halka */
+.d5{background:#1f1e1c;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:26px 26px;color:#fff;display:grid;justify-items:center;align-content:center;gap:18px;font-family:"Hanken Grotesk",sans-serif}
+.d5 h3{font:700 32px "Bricolage Grotesque",sans-serif;letter-spacing:-.02em}
+.d5 .sub{font-size:14px;color:#d2cec6}
+.ringwrap{position:relative;width:220px;height:240px;cursor:pointer;border:0;background:none;padding:0}
+.ringwrap svg{position:absolute;inset:0;overflow:visible}
+.ringwrap .lit{transition:stroke-dashoffset .7s cubic-bezier(.65,0,.35,1),filter .4s}
+.ringwrap.on .lit{filter:drop-shadow(0 0 8px #f0b23a) drop-shadow(0 0 22px rgba(240,178,58,.6))}
+.ringwrap .leaf{transform-box:fill-box;transform-origin:top center}
+.ringwrap.on .leaf{animation:sway 1.1s ease-in-out}
+@keyframes sway{30%{transform:rotate(8deg)}65%{transform:rotate(-5deg)}}
+.ringwrap .lg{position:absolute;left:72px;top:92px;width:76px;height:76px;border-radius:50%;background:#ffd21f;display:grid;place-items:center;color:#1c1b19;font:800 13px/1.05 "Bricolage Grotesque",sans-serif;text-align:center;border:3px solid #1c1b19}
+.d5 .skip{color:#f0b23a;font-weight:600;font-size:14px;text-decoration:underline}
+.d5 .menu5{position:absolute;inset:0;background:#e9e6e1;color:#1c1b19;clip-path:circle(0% at 50% 45%);transition:clip-path .55s cubic-bezier(.65,0,.35,1);padding:40px 18px;display:grid;align-content:start;gap:10px}
+.d5 .menu5.in{clip-path:circle(150% at 50% 45%)}
+.d5 .menu5 b{font:800 30px "Bricolage Grotesque",sans-serif}
+.d5 .menu5 .li{display:flex;justify-content:space-between;border-bottom:1px solid #d2cec6;padding:10px 0}
+.d5 .menu5 small{color:#a9472b;font-weight:600}
+section.analiz{display:grid;gap:16px}
+.analiz .box2{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;display:grid;gap:14px}
+.analiz table{border-collapse:collapse;width:100%;min-width:620px;font-size:14px}
+.analiz th,.analiz td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;font-variant-numeric:tabular-nums}
+.analiz th{font:600 12px var(--mono);color:var(--muted)}
+.tbl{overflow-x:auto}
+.analiz ul,.analiz ol{margin:0;padding-left:20px;display:grid;gap:6px}
+.note{font-size:13px;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="wrap">
+  <div class="top">
+    <div style="display:grid;gap:10px">
+      <div class="tag">NEWSTOP QR MENÜ · 4 YÖN · 14 KASIM 2026</div>
+      <h1>Hangi durakta inelim?</h1>
+      <p class="lead">Dört açılışı burada dene: ses, titreşim ve animasyon gerçek. Altında uzman değerlendirmesi ve karar önerisi var.</p>
+    </div>
+    <button class="sound" id="snd" aria-pressed="true">🔊 Ses açık</button>
+  </div>
+
+  <div class="grid">
+    <article class="card">
+      <div class="meta"><h3>v1 · Kalkış Panosu</h3><span class="badge">arşiv</span></div>
+      <div class="demo d1" id="d1"></div>
+      <p>Koyu istasyon panosu, harfler sesle çevrilir. Kalabalık bulundu.</p>
+      <a href="https://www.figma.com/design/kqsCNL56897MP0kKKPEuN3?node-id=3-2" target="_blank" rel="noopener">Figma'da aç</a>
+    </article>
+    <article class="card">
+      <div class="meta"><h3>v2 · İnecek var!</h3><span class="badge fav">beğenildi</span></div>
+      <div class="demo d2" id="d2"></div>
+      <p>Açık, sade menü. STOP düğmesine basınca otobüs zili çalar.</p>
+      <a href="https://www.figma.com/design/kqsCNL56897MP0kKKPEuN3?node-id=11-358" target="_blank" rel="noopener">Figma'da aç</a>
+    </article>
+    <article class="card">
+      <div class="meta"><h3>v3 · Işığı aç</h3><span class="badge">neon</span></div>
+      <div class="demo d3" id="d3"></div>
+      <p>Işık anahtarı, floresan neon titreyerek yanar ve vızıldar.</p>
+      <a href="https://www.figma.com/design/kqsCNL56897MP0kKKPEuN3?node-id=13-350" target="_blank" rel="noopener">Figma'da aç</a>
+    </article>
+    <article class="card">
+      <div class="meta"><h3>v4 · New Stop FM</h3><span class="badge">radyo</span></div>
+      <div class="demo d4" id="d4"></div>
+      <p>Düğmeyi çevir: tık, cızırtı, 61.0'da jingle. Seçtiklerin çalma listesi olur.</p>
+      <a href="https://www.figma.com/design/kqsCNL56897MP0kKKPEuN3?node-id=14-344" target="_blank" rel="noopener">Figma'da aç</a>
+    </article>
+    <article class="card">
+      <div class="meta"><h3>v5 · Halka</h3><span class="badge fav">mekândan</span></div>
+      <div class="demo d5" id="d5"></div>
+      <p>Mekânın halka avizesi: dokununca ışık çemberi dolanır, cam tınısı, halka açılır ve menü gelir.</p>
+      <a href="https://www.figma.com/design/kqsCNL56897MP0kKKPEuN3?node-id=20-356" target="_blank" rel="noopener">Figma'da aç</a>
+    </article>
+  </div>
+  <p class="note">Titreşim yalnız Android'de çalışır; iPhone Safari titreşim API'sini desteklemez, orada ses ve animasyon kalır. Ses ilk dokunuştan sonra başlar.</p>
+
+  <section class="analiz">
+    <div style="display:grid;gap:8px"><div class="tag">UZMAN DEĞERLENDİRMESİ · UX DİREKTÖRÜ AJANI</div><h2>Öneri: v2 iskeleti, v3'ten yalnız neon dokunuşu</h2>
+    <p class="lead">Kafenin Permesso tercihi ve 150 ürünlük menüde okunurluk v2'yi açık ara öne koyuyor. Neon kimlik v3'ten küçük bir vurgu olarak alınır, radyo ve pano metaforları bırakılır.</p></div>
+    <div class="box2 tbl">
+      <table>
+        <thead><tr><th>Ölçüt (1–10)</th><th>v1 Pano</th><th>v2 İnecek var</th><th>v3 Işığı aç</th><th>v4 FM</th></tr></thead>
+        <tbody>
+          <tr><td>Okunurluk (150 ürün, gece/gündüz)</td><td>6</td><td><b>9</b></td><td>6</td><td>7</td></tr>
+          <tr><td>Marka uyumu (neon, tuğla, sarı-siyah)</td><td>6</td><td>7</td><td><b>9</b></td><td>8</td></tr>
+          <tr><td>Özgünlük, akılda kalma</td><td>7</td><td>7</td><td>8</td><td><b>9</b></td></tr>
+          <tr><td>Etkileşim kalitesi, tekrarda yormama</td><td>5</td><td><b>8</b></td><td>6</td><td>6</td></tr>
+          <tr><td>Kafenin beğeni sinyaline uyum</td><td>3</td><td><b>10</b></td><td>4</td><td>5</td></tr>
+          <tr><td>Uygulama kolaylığı (10 = kolay)</td><td>5</td><td><b>9</b></td><td>5</td><td>6</td></tr>
+          <tr><th>Toplam / 60</th><th>32</th><th>50</th><th>38</th><th>41</th></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="grid">
+      <div class="box2"><h3>Alınacaklar</h3><ul>
+        <li>v2: açık zemin, sade liste, STOP açılışı ve zil, alttan ürün sayfası, sarı "Garsona göster".</li>
+        <li>v3'ten: turuncu neon yalnız vurgu olarak (üstteki NEW STOP, Garsona göster'deki masa). İsteğe bağlı gece modu, sistem koyu temasına bağlı.</li>
+        <li>Açılışta "doğrudan menüye geç" bağlantısı; bir kez geçen bir daha görmez.</li></ul></div>
+      <div class="box2"><h3>Bırakılacaklar</h3><ul>
+        <li>Floresan titreme ve vızıltı (gece rahatsız eder, yorumlarda müzik şikâyeti var; titreme ışığa duyarlı kişiler için risk).</li>
+        <li>Frekans skalası: 17 kategoriye sığmaz, sayılar anlamsız, Arapçada yön karışır.</li>
+        <li>Pano harfleri ve tüm bilet/sipariş dili.</li></ul></div>
+      <div class="box2"><h3>Pratik uyarılar</h3><ul>
+        <li>Ses kısa (1 sn altı), ilk dokunuştan sonra; sessize alma hatırlanır.</li>
+        <li>iPhone titreşimsiz: geri bildirim her zaman görsel de olmalı.</li>
+        <li>Arapça için arayüz aynalanmalı ("+", fiyat, geri oku).</li>
+        <li>Alttaki Seçtiklerim çubuğu son satırı örtmemeli: listeye en az 80 px alt boşluk.</li>
+        <li>Soluk gri alt metinlerin kontrastı ölçülmeli.</li></ul></div>
+      <div class="box2"><h3>Kafeye sorulacak 3 soru</h3><ol>
+        <li>İçeride müzik açıkken menü sesli mi olsun, sessiz mi başlasın?</li>
+        <li>En çok satan 8–10 ürün hangileri, hangilerinin iyi fotoğrafı var?</li>
+        <li>Öne gece (neon) yüzü mü çıksın, gündüz öğrenci kafesi yüzü mü?</li></ol></div>
+    </div>
+    <p class="note">Ajan ekranları Figma'dan inceledi. Kaydırma, Arapça ekran ve gerçek ses/titreşim görülmedi; bunlar tahmin. Seslerin kendisini bu sayfadaki denemelerde sen dinleyebilirsin.</p>
+  </section>
+</div>
+
+<script>
+(()=>{
+let ctx=null, soundOn=true;
+const snd=document.getElementById('snd');
+snd.addEventListener('click',()=>{soundOn=!soundOn;snd.setAttribute('aria-pressed',soundOn);snd.textContent=soundOn?'🔊 Ses açık':'🔇 Ses kapalı';if(!soundOn&&hum)stopHum();});
+const A=()=>{if(!soundOn)return null;try{if(!ctx)ctx=new (window.AudioContext||window.webkitAudioContext)();if(ctx.state==='suspended')ctx.resume();return ctx;}catch(e){return null}};
+const vib=p=>{try{navigator.vibrate&&navigator.vibrate(p)}catch(e){}};
+let noiseBuf=null;const noise=c=>{if(noiseBuf)return noiseBuf;const b=c.createBuffer(1,c.sampleRate*2,c.sampleRate);const d=b.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1;return noiseBuf=b;};
+function burst(f=2000,dur=.03,g=.4,type='bandpass'){const c=A();if(!c)return;const s=c.createBufferSource();s.buffer=noise(c);const fl=c.createBiquadFilter();fl.type=type;fl.frequency.value=f;fl.Q.value=1.2;const v=c.createGain();const t=c.currentTime;v.gain.setValueAtTime(g,t);v.gain.exponentialRampToValueAtTime(.001,t+dur);s.connect(fl).connect(v).connect(c.destination);s.start(t);s.stop(t+dur+.02);}
+function tone(f,start=0,dur=.4,type='sine',g=.25){const c=A();if(!c)return;const o=c.createOscillator();o.type=type;o.frequency.value=f;const v=c.createGain();const t=c.currentTime+start;v.gain.setValueAtTime(0,t);v.gain.linearRampToValueAtTime(g,t+.01);v.gain.exponentialRampToValueAtTime(.001,t+dur);o.connect(v).connect(c.destination);o.start(t);o.stop(t+dur+.05);}
+function bell(f,start){tone(f,start,1.3,'sine',.28);tone(f*2.76,start,.5,'sine',.06);tone(f*5.4,start,.2,'sine',.03);}
+let hum=null;
+function startHum(level=.06){const c=A();if(!c)return;stopHum();const o=c.createOscillator();o.type='sawtooth';o.frequency.value=100;const o2=c.createOscillator();o2.type='square';o2.frequency.value=50;const fl=c.createBiquadFilter();fl.type='lowpass';fl.frequency.value=520;const v=c.createGain();v.gain.value=level;o.connect(fl);o2.connect(fl);fl.connect(v).connect(c.destination);o.start();o2.start();hum={o,o2,v,c};}
+function setHum(l,t=.05){if(hum)hum.v.gain.setTargetAtTime(l,hum.c.currentTime,t);}
+function stopHum(){if(!hum)return;try{hum.v.gain.setTargetAtTime(0,hum.c.currentTime,.05);const h=hum;setTimeout(()=>{try{h.o.stop();h.o2.stop()}catch(e){}},300);}catch(e){}hum=null;}
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const resetBtn=(el,fn)=>{const b=document.createElement('button');b.className='reset';b.textContent='baştan';b.addEventListener('click',e=>{e.stopPropagation();fn();});el.appendChild(b);};
+
+// v1
+const d1=document.getElementById('d1');const ROWS=[['K1','ESPRESSO'],['K2','SOĞUK KAHVE'],['B1','BUBBLE TEA'],['F1','FROZEN'],['D1','TATLI']];const CH='ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ';
+function v1(){d1.innerHTML='';ROWS.forEach(([c,w])=>{const r=document.createElement('div');r.className='row';r.innerHTML=`<span class="code">${c}</span>`+[...w.padEnd(11,' ')].map(ch=>`<span class="flap" data-t="${ch}"> </span>`).join('');d1.appendChild(r);});const b=document.createElement('button');b.className='go';b.textContent='Panoyu çevir';b.addEventListener('click',run1);d1.appendChild(b);resetBtn(d1,v1);}
+function run1(){const flaps=[...d1.querySelectorAll('.flap')];flaps.forEach((f,i)=>{const target=f.dataset.t;let n=reduce?0:4+(i%11);const step=()=>{if(n-->0){f.textContent=CH[Math.random()*CH.length|0];if(i%3===0)burst(2600,.025,.25,'highpass');setTimeout(step,55);}else{f.textContent=target;if(i%11===10){burst(1800,.03,.3);vib(6);}}};setTimeout(step,(i%11)*35+Math.floor(i/11)*90);});}
+v1();
+
+// v2
+const d2=document.getElementById('d2');
+function v2(){d2.innerHTML=`<h3>inecek var!</h3><div class="pole"><div class="box"><button class="stop" aria-label="STOP düğmesine bas">STOP<span class="ring"></span></button></div></div><div style="text-align:center;font-size:14px">Düğmeye bas, durağında in.</div><div class="menu"><div style="font-size:12px;letter-spacing:.28em">NEW STOP</div><b>bugün durakta</b><div class="li"><span>Karpuz Frozen</span><span>240 ₺</span></div><div class="li"><span>Latte</span><span>190 ₺</span></div><div class="li"><span>Blue Lagoon</span><span>260 ₺</span></div><div class="li"><span>Elma Mojito</span><span>270 ₺</span></div></div>`;const s=d2.querySelector('.stop'),ring=d2.querySelector('.ring'),m=d2.querySelector('.menu');
+s.addEventListener('click',()=>{s.classList.add('down');ring.classList.remove('go');void ring.offsetWidth;ring.classList.add('go');bell(659,0);bell(523,.32);vib(18);setTimeout(()=>s.classList.remove('down'),140);setTimeout(()=>m.classList.add('in'),reduce?0:900);});resetBtn(d2,v2);}
+v2();
+
+// v3
+const d3=document.getElementById('d3');
+function v3(){stopHum();d3.classList.remove('lit');d3.innerHTML=`<div class="neon" id="nn">NEW<br>STOP</div><button class="switch" aria-label="Işığı aç"><span><i></i></span></button><div class="hint">Işığı aç, menü yansın.</div>`;const sw=d3.querySelector('.switch'),n=d3.querySelector('#nn');let done=false;
+sw.addEventListener('click',()=>{if(done)return;done=true;sw.classList.add('on');burst(900,.05,.5,'lowpass');burst(3200,.02,.2,'highpass');vib(20);
+ const seq=reduce?[[0,1]]:[[120,1],[180,0],[300,1],[340,0],[640,1],[700,0],[760,1]];startHum(0);
+ seq.forEach(([t,on])=>setTimeout(()=>{n.classList.toggle('on',!!on);if(on){tone(3100,0,.05,'triangle',.08);setHum(.09,.01);vib(on?10:0);}else setHum(0,.01);},t));
+ setTimeout(()=>{d3.classList.add('lit');setHum(.035,.4);d3.querySelector('.hint').textContent='Menü yandı.';setTimeout(()=>setHum(.012,.8),1200);},reduce?0:820);});
+resetBtn(d3,v3);}
+v3();
+
+// v4
+const d4=document.getElementById('d4');let st=null,stG=null;
+function v4(){if(st){try{stG.gain.value=0;st.stop()}catch(e){}st=null;}
+d4.innerHTML=`<div style="font:600 11px 'IBM Plex Mono',monospace">SÖĞÜTLÜ · AKÇAABAT</div><div class="freq"><span id="fq">57.4</span><small>FM</small></div><div class="scale" aria-hidden="true"><span class="station" style="left:50%">61.0</span><span class="needle" id="nd"></span></div><div class="knob" id="kb" role="slider" tabindex="0" aria-label="Frekans ayarı" aria-valuemin="56" aria-valuemax="66"></div><div class="status" id="ss">Çevir, menü çalsın.</div><button class="auto" id="au">otomatik ara</button>`;
+let f=57.4,ang=0,locked=false,lastTick=Math.round(f*5);const fq=d4.querySelector('#fq'),nd=d4.querySelector('#nd'),kb=d4.querySelector('#kb'),ss=d4.querySelector('#ss');
+const ensureStatic=()=>{const c=A();if(!c||st)return;st=c.createBufferSource();st.buffer=noise(c);st.loop=true;const bp=c.createBiquadFilter();bp.type='bandpass';bp.frequency.value=1700;bp.Q.value=.6;stG=c.createGain();stG.gain.value=0;st.connect(bp).connect(stG).connect(c.destination);st.start();};
+const render=()=>{fq.textContent=f.toFixed(1);nd.style.left=((f-56)/10*100)+'%';kb.style.transform=`rotate(${ang}deg)`;kb.setAttribute('aria-valuenow',f.toFixed(1));const dist=Math.abs(f-61);if(stG)stG.gain.setTargetAtTime(locked?0:Math.min(.22,dist*.12+.03),ctx.currentTime,.03);};
+const setF=(nf)=>{if(locked)return;f=Math.max(56,Math.min(66,nf));const tk=Math.round(f*5);if(tk!==lastTick){lastTick=tk;burst(3500,.012,.18,'highpass');vib(4);}if(Math.abs(f-61)<.12){f=61;locked=true;render();if(stG)stG.gain.setTargetAtTime(0,ctx.currentTime,.02);[523,659,784].forEach((n,i)=>tone(n,i*.13,.35,'triangle',.22));vib([10,40,10]);ss.textContent='Yayındasın: New Stop FM 61.0';}render();};
+let drag=null;kb.addEventListener('pointerdown',e=>{ensureStatic();kb.setPointerCapture(e.pointerId);const r=kb.getBoundingClientRect();drag={cx:r.left+r.width/2,cy:r.top+r.height/2,a:Math.atan2(e.clientY-(r.top+r.height/2),e.clientX-(r.left+r.width/2))};});
+kb.addEventListener('pointermove',e=>{if(!drag)return;const a=Math.atan2(e.clientY-drag.cy,e.clientX-drag.cx);let d=a-drag.a;if(d>Math.PI)d-=2*Math.PI;if(d<-Math.PI)d+=2*Math.PI;drag.a=a;const deg=d*180/Math.PI;ang+=deg;setF(f+deg/90);});
+kb.addEventListener('pointerup',()=>drag=null);kb.addEventListener('pointercancel',()=>drag=null);
+kb.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowUp'){ensureStatic();ang+=9;setF(f+.1);e.preventDefault();}if(e.key==='ArrowLeft'||e.key==='ArrowDown'){ensureStatic();ang-=9;setF(f-.1);e.preventDefault();}});
+d4.querySelector('#au').addEventListener('click',()=>{ensureStatic();const iv=setInterval(()=>{if(locked){clearInterval(iv);return;}ang+=9;setF(f+.1);},70);});
+render();resetBtn(d4,v4);}
+v4();
+
+// v5
+const d5=document.getElementById('d5');
+function v5(){const C=2*Math.PI*96;let leaves='';for(let i=0;i<22;i++){const a=(25+i*6)*Math.PI/180,x=110+Math.cos(a)*96,y=130+Math.sin(a)*96,l=14+(i*7)%12;leaves+=`<path class="leaf" style="animation-delay:${i*25}ms" d="M${x} ${y} c4 ${l*.35} 4 ${l*.7} 0 ${l} c-4 ${-l*.3} -4 ${-l*.65} 0 ${-l}z" fill="${i%3?'#7e9a54':'#a7bf6a'}"/>`;}
+d5.innerHTML=`<button class="ringwrap" aria-label="Halkaya dokun"><svg viewBox="0 0 220 240" width="220" height="240"><path d="M62 0V58M110 0V34M158 0V58" stroke="#5b5852" stroke-width="1.2"/><circle cx="110" cy="130" r="96" fill="none" stroke="#5c5952" stroke-width="5"/><circle class="lit" cx="110" cy="130" r="96" fill="none" stroke="#f0b23a" stroke-width="5" stroke-linecap="round" transform="rotate(-90 110 130)" stroke-dasharray="${C}" stroke-dashoffset="${C}"/>${leaves}</svg><span class="lg">NEW<br>STOP</span></button><h3>halkaya dokun</h3><div class="sub">ışık yansın, menü açılsın</div><button class="skip">doğrudan menüye geç</button><div class="menu5"><div style="display:flex;gap:10px;align-items:center"><span style="width:28px;height:28px;border-radius:50%;background:#ffd21f;border:2px solid #1c1b19"></span><strong>New Stop</strong></div><b>kahve</b><small>espresso bazlı</small><div class="li"><span>Espresso</span><span>150 ₺</span></div><div class="li"><span>Americano</span><span>190 ₺</span></div><div class="li"><span>Latte</span><span>190 ₺</span></div><div class="li"><span>Cappuccino</span><span>190 ₺</span></div></div>`;
+const rw=d5.querySelector('.ringwrap'),lit=d5.querySelector('.lit'),m=d5.querySelector('.menu5');let done=false;
+const open=()=>m.classList.add('in');
+rw.addEventListener('click',()=>{if(done)return;done=true;rw.classList.add('on');lit.style.strokeDashoffset='0';
+ tone(1568,0,.6,'sine',.12);tone(2093,.12,.7,'sine',.09);tone(3136,.12,.25,'sine',.03);
+ [0,175,350,525].forEach(t=>setTimeout(()=>vib(4),t));
+ setTimeout(open,reduce?0:1050);});
+d5.querySelector('.skip').addEventListener('click',open);
+resetBtn(d5,v5);}
+v5();
+})();
+</script>
