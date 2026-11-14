@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { ArrowRight, Phone, MessageCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { SayfaKabi } from "./Sayfa";
 
 export function IsletmeBilgisi({
@@ -15,7 +15,7 @@ export function IsletmeBilgisi({
       <div className="overflow-y-auto overscroll-contain px-5 pt-2 pb-8">
         {/* Başlık ve Durum Rozeti */}
         <div className="flex flex-col items-start gap-2">
-          <h2 className="text-[36px] font-bold leading-tight tracking-[-0.03em] text-ink">
+          <h2 className="text-[34px] font-bold leading-tight tracking-[-0.03em] text-ink">
             new stop?
           </h2>
           <div className="inline-flex items-center gap-2 rounded-full bg-emerald-100/70 px-3 py-1 text-xs font-semibold tracking-wider text-emerald-800">
@@ -24,19 +24,17 @@ export function IsletmeBilgisi({
           </div>
         </div>
 
-        {/* Konsept ve Açıklama */}
-        <div className="mt-5 flex items-center gap-4 rounded-2xl bg-yuzey/70 p-3.5 border border-cizgi/50">
-          <div className="relative size-16 flex-none rounded-xl bg-sari/30 border border-sari/60 p-2.5 flex items-center justify-center shadow-xs">
-            <Image
-              src="/img/logo.png"
-              alt="New Stop"
-              width={44}
-              height={44}
-              className="rounded-full bg-sari object-cover"
-            />
-          </div>
-          <p className="text-[14px] leading-relaxed text-ink/90 font-normal">
-            Durağında in, bir kahve molası ver. Karadeniz Teknik Üniversitesi Fatih Kampüsü yanı ve Söğütlü sahilinde New Stop; taze kahveler ve lezzetli tatlılarla senin durağın.
+        {/* Konsept ve Açıklama (Doğal, ferah ve kutusuz tasarım) */}
+        <div className="mt-5 flex items-center gap-4">
+          <Image
+            src="/img/logo.png"
+            alt="New Stop"
+            width={60}
+            height={60}
+            className="size-[60px] flex-none rounded-full object-cover shadow-xs border border-cizgi"
+          />
+          <p className="text-[14px] leading-relaxed text-soluk font-normal">
+            Durağında in, bir kahve molası ver. Karadeniz Teknik Üniversitesi Fatih Kampüsü yanı ve Söğütlü sahilinde lezzetli kahveler, tatlılar ve keyifli bir durak için her zaman seninleyiz.
           </p>
         </div>
 
@@ -60,8 +58,8 @@ export function IsletmeBilgisi({
           </p>
         </div>
 
-        {/* Aksiyon Düğmeleri */}
-        <div className="mt-5 grid gap-2.5">
+        {/* Yol Tarifi Düğmesi */}
+        <div className="mt-5">
           <a
             href="https://www.google.com/maps/search/?api=1&query=New+Stop+Cafe+Söğütlü+Akçaabat+Trabzon"
             target="_blank"
@@ -71,25 +69,6 @@ export function IsletmeBilgisi({
             <span>Yol tarifi al</span>
             <ArrowRight size={18} strokeWidth={2} />
           </a>
-
-          <div className="flex gap-2.5">
-            <a
-              href="tel:+905550000000"
-              className="flex min-h-11 flex-1 items-center justify-center gap-2 rounded-2xl bg-yuzey px-4 py-2.5 text-base font-medium text-ink transition-colors active:bg-cizgi"
-            >
-              <Phone size={18} strokeWidth={1.75} />
-              <span>Ara</span>
-            </a>
-            <a
-              href="https://wa.me/905550000000"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex min-h-11 flex-1 items-center justify-center gap-2 rounded-2xl bg-yuzey px-4 py-2.5 text-base font-medium text-ink transition-colors active:bg-cizgi"
-            >
-              <MessageCircle size={18} strokeWidth={1.75} />
-              <span>WhatsApp</span>
-            </a>
-          </div>
         </div>
 
         {/* Sosyal Medya & Fotoğraflar */}

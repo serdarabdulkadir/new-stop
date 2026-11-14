@@ -188,9 +188,9 @@ export function Menu({
 
   return (
     <>
-      <header className="flex items-center gap-2.5 px-4 py-2.5">
-        <Image src="/img/logo.png" alt={T.logoAlt} width={36} height={36} className="size-9 rounded-full bg-sari object-cover" priority />
-        <span className="text-[13px] tracking-[0.28em]">{T.marka}</span>
+      <header className="flex items-center gap-3 px-4 py-2.5">
+        <Image src="/img/logo.png" alt={T.logoAlt} width={46} height={46} className="size-[46px] rounded-full object-cover border border-cizgi/50 shadow-xs" priority />
+        <span className="text-[14px] font-semibold tracking-[0.24em] text-ink">{T.marka}</span>
         <span className="flex-1" />
         <div className="flex items-center gap-2">
           <button
